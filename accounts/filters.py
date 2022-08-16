@@ -12,4 +12,5 @@ class OrderFilter(django_filters.FilterSet):
 		exclude=['customer','date_created',]
 		
 
-#product_name filter later
+#product_name filter search by the name of the product by typing without note
+#product__name=CharFilter(field_name='product_name', lookup_expr='icontains')
