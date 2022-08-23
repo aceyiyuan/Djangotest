@@ -11,7 +11,7 @@ from django.forms import inlineformset_factory
 
 from .models import *
 from .filters import OrderFilter
-from .forms import OrderForm, CreateUserForm
+from .forms import OrderForm, CreateUserForm,CustomerForm
 from .decorators import unauthenticated_user,allowed_users,admin_only
 
 @unauthenticated_user
@@ -27,7 +27,6 @@ def registerPage(request):
             user.groups.add(group)
             Customer.objects.create(
                 user=user,
-
                 )
             messages.success(request,'Account was created for ' + username)
             return redirect('login')
@@ -81,7 +80,21 @@ def userPage(request):
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['customer'])
+def accountSettings(request):
+    customer=request.user.customer
+    form=CustomerForm(instance=customer)
+    
+    if request.method=='POST':
+        form=CustomerForm(request.POST, request.FILES,instance=customer)
+        if form.is_valid():
+            form.save()
+    context={'form':form}
+    return render(request,'accounts/account_settings.html',context)
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['customer'])
 def products(request):
+
     products=Product.objects.all()
     return render(request,'accounts/products.html',{'products':products})
 
