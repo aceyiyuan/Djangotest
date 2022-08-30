@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'crm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres', #database name
+        'NAME': 'demo_test', #database name
         'USER': 'postgres',
-        'PASSWORD':'yourpassword',
-        'HOST':'database-1 aws endpoint....',
+        'PASSWORD':'1234',
+        'HOST':'127.0.0.1',
         'PORT':'5432',
     }
 }
@@ -148,7 +148,7 @@ EMAIL_HOST_PASSWORD="hajxwjgjpehphlsj" #app password sample. invalid password:)
 
 
 
-
+#ALTER USER postgres WITH PASSWORD '1234';
 
 
 
