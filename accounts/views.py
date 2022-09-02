@@ -21,10 +21,12 @@ def registerPage(request):
     if request.method=="POST":
         form=CreateUserForm(request.POST)
         if form.is_valid():
-            user=form.save()
+            user=form.save()   
             username=form.cleaned_data.get('username')
             messages.success(request,'Account was created for ' + username)
-            return redirect('login')
+           
+            return render(request,'accounts/user.html')
+          
     context={'form':form}
     return render(request, 'accounts/register.html',context)
 
@@ -47,7 +49,7 @@ def loginPage(request):
 
 def logoutUser(request):
     logout(request)
-    return redirect ('login')
+    return redirect ('login')    
 
 @login_required(login_url="login")
 @admin_only

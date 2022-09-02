@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'django_filters',
+    'storages',
+
 ]
 
 MIDDLEWARE = [
@@ -81,8 +83,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres', #database name
         'USER': 'postgres',
-        'PASSWORD':'yourpassword',
-        'HOST':'database-1 aws endpoint....',
+        'PASSWORD':'Sugar123',
+        'HOST':'database-1.cahmjbfpleir.eu-north-1.rds.amazonaws.com',
         'PORT':'5432',
     }
 }
@@ -137,18 +139,44 @@ MEDIA_ROOT= BASE_DIR/'static/images'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+
+
 #SMTP Configuration
 
 EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST="smtp.gmail.com"
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
-EMAIL_HOST_USER="sugar@gmail.com"
+EMAIL_HOST_USER="org.sugar@gmail.com"
 EMAIL_HOST_PASSWORD="hajxwjgjpehphlsj" #app password sample. invalid password:)
 
 
+AWS_ACCESS_KEY_ID = 'AKIAXOWB7IOC52XPJOE6'
+AWS_SECRET_ACCESS_KEY = 'CMAegVF6FhE4iE4Lx0zVckxkJMEEGnZsC5JLp8e2'
+AWS_STORAGE_BUCKET_NAME = 'sugarorg-bucket'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_REGION_NAME = 'eu-north-1'
 
+#cors settings
 
-
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "PUT",
+            "POST",
+            "DELETE"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
+]
 
 
