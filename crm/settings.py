@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9zh3f5a16)mfdm=6p#h0$!is5&duz1j10cjpw%deszro33@v-6'
+SECRET_KEY = 'django-insecuraorseucurefdsfsfsdfsfdsfs#h0$!is5&duz1j10cjpw%deszro33@v-6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -73,7 +73,7 @@ DATABASES = {
         'NAME': 'postgres', #database name
         'USER': 'postgres',
         'PASSWORD':'Sugar123',
-        'HOST':'database-1.cahmjbfpleir.eu-north-1.rds.amazonaws.com',
+        'HOST':'database-1.youmayguess.eu-north-1.rds.amazonaws.com',
         'PORT':'5432',
     }
 }
@@ -142,13 +142,13 @@ EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST="smtp.gmail.com"
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
-EMAIL_HOST_USER="org.sugar@gmail.com"
-EMAIL_HOST_PASSWORD="hajxwjgjpehphlsj" #app password sample. invalid password:)
+EMAIL_HOST_USER="sugar@gmail.com"
+EMAIL_HOST_PASSWORD="hajxwjgjsdfafahphlsj" #app password sample. invalid password:)
 
 
-AWS_ACCESS_KEY_ID = 'AKIAXOWB7IOC52XPJOE6'
-AWS_SECRET_ACCESS_KEY = 'CMAegVF6FhE4iE4Lx0zVckxkJMEEGnZsC5JLp8e2'
-AWS_STORAGE_BUCKET_NAME = 'sugarorg-bucket'
+AWS_ACCESS_KEY_ID = 'AKIAX0lalala6'
+AWS_SECRET_ACCESS_KEY = 'CMAegVF6FolalalalalMEEGnZsC5JLp8e2'
+AWS_STORAGE_BUCKET_NAME = 'sugaafducket'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
@@ -174,4 +174,4 @@ AWS_S3_REGION_NAME = 'eu-north-1'
     }
 ]
 
-
+#postgres heroku://username:password@databaseurlendpoint:port/dbname

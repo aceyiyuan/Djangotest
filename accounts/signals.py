@@ -4,11 +4,7 @@ from django.contrib.auth.models import User,Group
 from .models import Customer
 from django.dispatch import receiver
 
-"""
 
-TypeError at /register/
-
-Field 'id' expected a number but got (<Group: customer>, False).
 
 @receiver(post_save, sender=User)
 def customer_profiles(sender, instance,created, **kwargs):
@@ -39,5 +35,5 @@ def customer_profile(sender, instance, created, **kwagrs):
         print('Profile created.!')
 
 
-
+"""
 
